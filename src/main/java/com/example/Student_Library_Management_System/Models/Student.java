@@ -5,15 +5,22 @@ import jakarta.persistence.*;
 @Entity
 @Table(name="student")
 public class Student {
+
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String name;
+
     @Column(unique = true)
     private String email;
+
     private String mobNo;
-    private String country;
+
     private int age;
+
+    private String country;
+
 
     //Plain syntax for bidirectional mapping
 
@@ -31,6 +38,8 @@ public class Student {
         )
         3. Choose the variable name of the parentEnty (reference : studentVariableName)
      */
+
+
     public Card getCard() {
         return card;
     }
@@ -40,9 +49,15 @@ public class Student {
     }
 
     public Student() {
-
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -68,14 +83,6 @@ public class Student {
         this.mobNo = mobNo;
     }
 
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
     public int getAge() {
         return age;
     }
@@ -84,7 +91,11 @@ public class Student {
         this.age = age;
     }
 
+    public String getCountry() {
+        return country;
+    }
 
-
-
+    public void setCountry(String country) {
+        this.country = country;
+    }
 }
